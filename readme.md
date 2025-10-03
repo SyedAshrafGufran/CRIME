@@ -1,5 +1,5 @@
-🔒 Criminal Record Management System (CRMS) Backend
-===================================================
+🔒 Criminal Record Management System (CRMS) 
+============================================
 
 This project implements a secure, hybrid record management system using **FastAPI (Python)** for logic, **MongoDB** for fast queries, **IPFS** for decentralized file storage, and **Ethereum/Ganache** for immutable data verification.
 
@@ -48,7 +48,7 @@ npm install -g truffle
 
 Local Ethereum Blockchain
 
-Install Ganache Desktop
+Install Ganache
 
 **IPFS Daemon**
 
@@ -60,9 +60,8 @@ Install **go-ipfs v0.7.0** binary (critical for Python compatibility)
 
 Navigate to the **backend** directory and install all required Python packages.
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   cd backend  pip install -r requirements.txt   `
+`   cd backend  pip install -r requirements.txt   `
 
-_(Note: Ensure requirements.txt contains fastapi, uvicorn, pymongo\[srv\], web3, and ipfshttpclient.)_
 
 🚀 Step-by-Step Backend Startup
 -------------------------------
@@ -73,15 +72,13 @@ You must execute the following steps in sequence every time you want to run the 
 
 **1\. Start the Ganache Blockchain**This runs the local Ethereum network. **Do this first.**
 
-> **ACTION:** Open the **Ganache Desktop** application and start your project workspace. Confirm the **Network ID** (e.g., 5777 or the dynamic ID) and **RPC Port** (7545).
-
 **2\. Deploy the Smart Contract (Critical Step)**This command compiles and deploys your contract, filling the empty networks section of FIRStorage.json with the deployed address.
 
 Directory
 
 Command
 
-**truffle-project/**
+**blockchain-project/**
 
 truffle migrate --network development --reset
 
@@ -95,13 +92,12 @@ truffle migrate --network development --reset
 
 Directory
 
-Command
-
 **backend/**
 
+
+Command
 uvicorn main:app --reload
 
-**5\. Verify MongoDB Connection (Optional Check)**The server will show a successful startup log if the connection is made. You can also manually verify by checking the **MongoDB Atlas Data Explorer** for the new criminal\_records\_db and fir\_records collection.
 
 🧪 Testing the API Functionality
 --------------------------------
@@ -109,17 +105,3 @@ uvicorn main:app --reload
 Access the interactive API documentation (Swagger UI) in your browser:
 
 http://127.0.0.1:8000/docs
-
-1.  **Test Upload (/store\_fir):**
-    
-    *   Use a **Ganache Account Address** as the officer\_address.
-        
-    *   Upload a dummy file (e.g., a simple PDF or TXT file).
-        
-    *   Success confirms data is stored on **MongoDB** and the file hash is recorded on the **Blockchain**.
-        
-2.  **Test Verification (/verify\_fir):**
-    
-    *   Use the case\_id from the successful upload.
-        
-    *   Success confirms that the **MongoDB CID** matches the immutable **Blockchain CID**.
