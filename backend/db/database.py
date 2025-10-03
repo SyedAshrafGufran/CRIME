@@ -1,8 +1,13 @@
 # db/database.py
 from pymongo import MongoClient
+import os
+from dotenv import load_dotenv
 
 # MongoDB connection URL
-MONGO_DB_URL = "mongodb+srv://ashgufran123_db_user:maKvBXJODGUfapB@cluster.jydunsx.mongodb.net/?retryWrites=true&w=majority&appName=cluster"
+load_dotenv() 
+
+# MongoDB Atlas connection string is loaded from the environment variable
+MONGO_DB_URL = os.getenv("MONGO_DB_URL")
 client = MongoClient(MONGO_DB_URL)
 
 # Access the database and collection
