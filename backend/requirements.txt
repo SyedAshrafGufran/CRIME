@@ -1,0 +1,10 @@
+# Core FastAPI
+fastapi
+uvicorn
+
+# Database (MongoDB)
+"pymongo[srv]"
+
+# Blockchain and IPFS
+web3
+ipfshttpclient

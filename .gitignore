@@ -1,0 +1,60 @@
+----------------------------------------
+1. PYTHON / FASTAPI / VIRTUAL ENVIRONMENT
+----------------------------------------
+Virtual environment folder
+/venv
+/.venv
+
+Python cache files
+pycache/
+*.pyc
+*.pyo
+*.pyd
+
+Dependencies managed by pip/conda
+/backend/env
+/backend/pip-log.txt
+
+Uvicorn/FastAPI internal files
+.pytest_cache
+.coverage
+
+----------------------------------------
+2. NODE / REACT / FRONTEND
+----------------------------------------
+Node modules directory (large and environment-specific)
+/backend/node_modules
+
+
+Logs and npm debug files
+npm-debug.log
+.npm/
+.yarn/
+.yarn-integrity
+
+----------------------------------------
+3. BLOCKCHAIN / TRUFFLE ARTIFACTS
+----------------------------------------
+Truffle deployment artifacts (contain dynamic addresses)
+/blockchain-project/build/
+/blockchain-project/contracts/Migrations.json
+
+Ganache/blockchain data files (often contain private keys)
+/blockchain-project/ganache-db/
+
+----------------------------------------
+4. SECRETS / KEYS / DATA / IPFS
+----------------------------------------
+Configuration files that should NOT be public
+.env
+*.env
+config.py # If this file contains the MongoDB connection string
+
+Temporary runtime files (like the PDF you create before IPFS upload)
+.pdf
+.zip
+temp_fir_.
+
+IPFS local repository/cache (massive and dynamic)
+.ipfs/
+/backend/.ipfs/
